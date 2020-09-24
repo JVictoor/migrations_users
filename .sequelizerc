@@ -1,0 +1,6 @@
+const path = require('path');/* ajuda mto nas rotas */
+module.exports={
+    config: path.resolve(__dirname,'src','config','database.js'),/* configurando o diretorio da database para dar acesso ao banco */
+    "migrations-path": path.resolve(__dirname, "src", "database", "migrations"),/* onde vai armazenar as migariton */
+    "models-path": path.resolve(__dirname, "src", "database", "models"),
+};

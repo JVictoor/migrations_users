@@ -1,0 +1,23 @@
+
+/* para corrigir adicionar um campo em uma tabela já criada, faz o seguinte, depois de criar outra migration você coloca o seguinte codigo abaixo, o nome da tabela e o campo a ser criado*/
+'use strict';
+
+module.exports = {
+  up:  (queryInterface, Sequelize) => {
+     return queryInterface.addColumn(
+       'users',/* nome da tabela */
+       'age', /* campo a ser criado  */
+       {
+         type:Sequelize.INTEGER,/* TIPO DO CAMPO NOVO CRIADO */
+       },
+     );
+
+  },
+
+  down:  (queryInterface, Sequelize) => {
+    return queryInterface.removeColumn(
+      'users',
+      'age',
+    );
+  }
+};
